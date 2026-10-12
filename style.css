@@ -1,0 +1,438 @@
+
+/* =========================================
+   1. CORES PRINCIPAIS DO PORTFÓLIO
+   ========================================= */
+
+:root {
+    --fundo: #fff7f5;
+    --superficie: #ffffff;
+    --rosa: #e8b9c8;
+    --rosa-claro: #f8e5eb;
+    --vinho: #572d38;
+    --vinho-hover: #754353;
+    --texto: #39272e;
+    --texto-secundario: #79666d;
+    --borda: #efdce2;
+    --sombra: rgba(87, 45, 56, 0.10);
+}
+
+
+/* =========================================
+   2. CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   3. CABEÇALHO
+   ========================================= */
+
+.cabecalho {
+    padding: 24px 8%;
+    background-color: var(--superficie);
+    border-bottom: 1px solid var(--borda);
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    color: var(--vinho);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cabecalho p {
+    margin: 4px 0 0;
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   4. SEÇÕES DO PORTFÓLIO
+   ========================================= */
+
+.secao {
+    width: min(100% - 40px, 900px);
+    margin: 0 auto;
+    padding: 56px 0;
+    scroll-margin-top: 24px;
+}
+
+.secao h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: var(--vinho);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.secao p {
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================
+   5. APRESENTAÇÃO INICIAL
+   ========================================= */
+
+#inicio {
+    width: 100%;
+    margin: 0;
+    padding: 52px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 18px;
+    border: 4px solid var(--superficie);
+    border-radius: 50%;
+    outline: 2px solid var(--rosa);
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 8px 24px var(--sombra);
+}
+
+#inicio h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.descricao {
+    max-width: 520px;
+    margin: 10px 0 26px;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   6. BOTÕES DE NAVEGAÇÃO
+   ========================================= */
+
+.botoes {
+    width: min(100%, 700px);
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.botoes .botao {
+    min-height: 50px;
+    padding: 12px 22px;
+    border: 1px solid var(--vinho);
+    border-radius: 12px;
+    background-color: var(--vinho);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.botoes .botao:hover {
+    background-color: var(--vinho-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px var(--sombra);
+}
+
+.botoes .botao.ativo {
+    background-color: var(--rosa-claro);
+    color: var(--vinho);
+    border-color: var(--rosa);
+    box-shadow: 0 0 0 3px rgba(232, 185, 200, 0.22);
+}
+
+.botoes .botao:focus-visible,
+.redes-sociais a:focus-visible {
+    outline: 3px solid var(--rosa);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   7. REDES SOCIAIS
+   ========================================= */
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.redes-sociais a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 105px;
+    padding: 9px 18px;
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+    background-color: var(--superficie);
+    color: var(--vinho);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.redes-sociais a:hover {
+    background-color: var(--rosa-claro);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   8. TELAS DE CONTEÚDO
+   ========================================= */
+
+.tela {
+    min-height: 260px;
+    animation: aparecer 0.35s ease;
+}
+
+/* Garante que telas ocultas continuem ocultas */
+.tela[hidden] {
+    display: none !important;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   9. CARTÃO DO PROJETO
+   ========================================= */
+
+.cartao-projeto {
+    width: 100%;
+    max-width: 650px;
+    overflow: hidden;
+    margin-top: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background-color: var(--superficie);
+    box-shadow: 0 8px 28px var(--sombra);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cartao-projeto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px var(--sombra);
+}
+
+.conteudo-projeto {
+    padding: 28px;
+}
+
+.conteudo-projeto h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--vinho);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+}
+
+.status-projeto {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background-color: var(--rosa-claro);
+    color: var(--vinho);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   10. RODAPÉ
+   ========================================= */
+
+.rodape {
+    margin-top: 32px;
+    padding: 24px 20px;
+    border-top: 1px solid var(--borda);
+    background-color: var(--superficie);
+    text-align: center;
+}
+
+.rodape p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   11. BOTÃO VOLTAR AO INÍCIO
+   ========================================= */
+
+#voltar-inicio {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    padding: 12px 18px;
+    border: 1px solid var(--vinho);
+    border-radius: 12px;
+    background-color: var(--vinho);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 16px var(--sombra);
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#voltar-inicio:hover {
+    background-color: var(--vinho-hover);
+    transform: translateY(-3px);
+}
+
+#voltar-inicio:focus-visible {
+    outline: 3px solid var(--rosa);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   12. ACESSIBILIDADE E MOVIMENTO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================
+   13. ADAPTAÇÃO PARA CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 20px 16px;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.5rem;
+    }
+
+    .secao {
+        width: calc(100% - 32px);
+        padding: 40px 0;
+    }
+
+    #inicio {
+        padding: 38px 16px;
+    }
+
+    .foto-perfil {
+        width: 118px;
+        height: 118px;
+    }
+
+    .descricao {
+        max-width: 340px;
+        font-size: 0.98rem;
+    }
+
+    .botoes {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .botoes .botao {
+        width: 100%;
+        min-height: 52px;
+    }
+
+    .redes-sociais {
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    .redes-sociais a {
+        min-width: 100px;
+    }
+
+    .conteudo-projeto {
+        padding: 20px;
+    }
+
+    .rodape {
+        margin-top: 20px;
+    }
+
+    #voltar-inicio {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+}
